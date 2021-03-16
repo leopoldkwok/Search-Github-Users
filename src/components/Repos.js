@@ -7,7 +7,6 @@ const Repos = () => {
   const { repos } = React.useContext(GithubContext);
 
   let languages = repos.reduce((total, item) => {
-    console.log('total: ', total);
     const { language } = item;
     if (!language) return total;
     if (!total[language]) {
@@ -46,7 +45,10 @@ const Repos = () => {
     <section className='section'>
       <Wrapper className='section-center'>
         <Pie3D data={languages} />
+        <div></div>
+        <Doughnut2D data={chartData} />
         {/* <ExampleChart data={chartData} /> */}
+        <div></div>
       </Wrapper>
     </section>
   );
