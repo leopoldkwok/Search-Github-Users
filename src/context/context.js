@@ -71,6 +71,10 @@ const GithubProvider = ({ children }) => {
   }
   // error
   useEffect(checkRequests, []);
+  // get initial user
+  useEffect(() => {
+    searchGithubUser('john-smilga');
+  }, []);
 
   return (
     <GithubContext.Provider
